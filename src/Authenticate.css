@@ -1,0 +1,37 @@
+.main {
+  background-color: dimgrey;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_div {
+  height: 30vh;
+  border-radius: 12px;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+table {
+  padding: 20px;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 35px;
+  background-color: darkgrey;
+}
+
+button {
+  background-color: darkviolet;
+  border: none;
+  border-radius: 10px;
+  height: 35px;
+  width: 100px;
+}
