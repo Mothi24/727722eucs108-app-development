@@ -1,0 +1,52 @@
+/* src/styles/Home.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.background-container {
+  position: relative;
+  height: 544px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.app-bar-wrapper {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  z-index: 2;
+}
+
+.styled-app-bar {
+  background-color: #000;
+  color: #FFF;
+  padding: 0 50px;
+  border-radius: 50px;
+}
+
+.styled-typography {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  margin-right: 20px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.placeholder {
+  height: 750px;
+  background-color: #FFF;
+}
+
+.section {
+  padding: 50px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+}
