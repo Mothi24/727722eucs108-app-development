@@ -1,6 +1,6 @@
-// src/components/Home.js
+import React, { useContext, useState } from 'react';
+import '../styles/Home.css';
 
-import React, { useState } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -15,17 +15,28 @@ import {
   ListItem,
   ListItemText,
   Button,
+  Card,
+  CardContent,
+  CardMedia,
 } from '@mui/material';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'; // Import the MenuOutlined icon
 import { styled } from '@mui/system';
 import '@fontsource/open-sans';
 import homeTile from '../assets/home_tile.jpeg';
+import buyImage from '../assets/rent.jpeg';   // Example images for the services
+import rentImage from '../assets/swap.jpg';
+import swapImage from '../assets/buy1.jpg';
 import { useNavigate } from 'react-router-dom';
+import ProfileCard from './ProfileCard';
+import { UserContext } from '../App';
+
 
 // Styles for Background Container
 const BackgroundContainer = styled('div')({
   position: 'relative',
+  width: '100%', // Full width
   height: '544px', // Image height
+  minWidth: '1366px',
   backgroundImage: `url(${homeTile})`,
   backgroundSize: 'cover', // Cover the entire area
   backgroundPosition: 'center', // Center the image
@@ -60,19 +71,18 @@ const StyledTypography = styled(Typography)({
   textDecoration: 'none', // Remove underline
 });
 
-// Placeholder for spacing
-const Placeholder = styled('div')({
-  height: '750px', // Increased height for spacing
-  backgroundColor: '#FFF', // White background for contrast
-});
-
 // Styles for sections
 const Section = styled('section')({
+  width: '100%', // Full width
   padding: '50px',
   fontFamily: "'Open Sans', sans-serif",
   backgroundColor: '#F7F7F7', // Light background for sections
   marginBottom: '20px',
   borderRadius: '8px',
+  display: 'flex', // Flexbox for layout
+  justifyContent: 'space-between',
+  alignItems: 'flex-start',
+  flexWrap: 'wrap',
 });
 
 // Drawer content styling
@@ -101,6 +111,20 @@ const SignInButton = styled(Button)({
   },
 });
 
+// Styles for Service Cards
+const ServiceCard = styled(Card)({
+  maxWidth: 420, // Set card width to 420px
+  margin: 'auto',
+  textAlign: 'center',
+  borderRadius: '12px',
+  boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+});
+
+const ServiceCardMedia = styled(CardMedia)({
+  height: 315, // Set image height to 315px
+  width: '100%', // Ensure image fills the width
+});
+
 // Smooth scroll behavior for anchor links
 const scrollBehavior = {
   scrollBehavior: 'smooth',
@@ -109,6 +133,9 @@ const scrollBehavior = {
 const Home = () => {
   // State to control the drawer open/close state
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isProfileCardOpen, setIsProfileCardOpen] = useState(false)
+
+  const { userData, setUserData } = useContext(UserContext)
 
   const navigate = useNavigate();
 
@@ -122,6 +149,24 @@ const Home = () => {
     }
     setIsDrawerOpen(open);
   };
+
+  const handleProfileClick = () => {
+    setIsProfileCardOpen(true);
+  };
+  const handleProfileCardClose = () => {
+    setIsProfileCardOpen(false);
+  };
+
+  const handleSignOut = () => {
+    setUserData({
+      isLoggedIn: false,
+      isAdmin: false,
+      name: '',
+      email: '',
+      age: ''
+    })
+    navigate('/')
+  }
 
   return (
     <>
@@ -186,7 +231,7 @@ const Home = () => {
         <DrawerContent>
           {/* Profile option */}
           <List>
-            <ListItem button>
+            <ListItem button onClick={handleProfileClick}>
               <ListItemText primary="Profile" />
             </ListItem>
           </List>
@@ -213,21 +258,134 @@ const Home = () => {
           <Divider variant="middle" />
 
           {/* SignIn Button */}
-          <SignInButton variant="contained" fullWidth onClick={() => { navigate('/signup') }}>
-            Sign In
+          <SignInButton variant="contained" fullWidth onClick={handleSignOut}>
+            Sign out
           </SignInButton>
         </DrawerContent>
       </Drawer>
 
-      {/* Placeholder for spacing */}
-      <Placeholder />
+      {/* Profile Card */}
+      {isProfileCardOpen && (
+        <ProfileCard userData={userData} onClose={handleProfileCardClose} />
+      )}
+
+      {/* Services Section */}
+      <Section id="services">
+        <Container maxWidth="xl"> {/* Use maxWidth to allow full width */}
+          <Typography
+            variant="h4"
+            sx={{
+              fontFamily: "'Open Sans', sans-serif",
+              fontWeight: 400,
+              mb: 4,
+              textAlign: 'center',
+            }}
+          >
+            Services
+          </Typography>
+          <Grid container spacing={3} justifyContent="center">  {/* Centering grid items */}
+            {/* Buy Service */}
+            <Grid item xs={12} sm={6} md={4}>
+              <ServiceCard>
+                <ServiceCardMedia
+                  image={buyImage}
+                  title="Buy"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontWeight: 500,
+                      mb: 1,
+                    }}
+                  >
+                    Buy
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontSize: 14,
+                      color: '#555',
+                    }}
+                  >
+                    Discover the latest fashion trends and buy your favorite items with ease.
+                  </Typography>
+                </CardContent>
+              </ServiceCard>
+            </Grid>
+
+            {/* Rent Service */}
+            <Grid item xs={12} sm={6} md={4}>
+              <ServiceCard>
+                <ServiceCardMedia
+                  image={rentImage}
+                  title="Rent"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontWeight: 500,
+                      mb: 1,
+                    }}
+                  >
+                    Rent
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontSize: 14,
+                      color: '#555',
+                    }}
+                  >
+                    Rent high-quality fashion pieces for any occasion at affordable prices.
+                  </Typography>
+                </CardContent>
+              </ServiceCard>
+            </Grid>
+
+            {/* Swap Service */}
+            <Grid item xs={12} sm={6} md={4}>
+              <ServiceCard>
+                <ServiceCardMedia
+                  image={swapImage}
+                  title="Swap"
+                />
+                <CardContent>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontWeight: 500,
+                      mb: 1,
+                    }}
+                  >
+                    Swap
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "'Open Sans', sans-serif",
+                      fontSize: 14,
+                      color: '#555',
+                    }}
+                  >
+                    Exchange your fashion items with others to refresh your wardrobe sustainably.
+                  </Typography>
+                </CardContent>
+              </ServiceCard>
+            </Grid>
+          </Grid>
+        </Container>
+      </Section>
 
       {/* Divider to separate sections */}
       <Divider sx={{ margin: '0 0' }} />
 
       {/* About Us and Contact Us Sections */}
       <Section>
-        <Container>
+        <Container maxWidth="xl"> {/* Use maxWidth to allow full width */}
           <Grid container spacing={6} id="about-us">
             {/* About Us Section */}
             <Grid item xs={12} md={5}>
@@ -246,7 +404,7 @@ const Home = () => {
                   fontFamily: "'Open Sans', sans-serif",
                   fontWeight: 400,
                   fontSize: 14,
-                  width: 600
+                  // width: '100%', // Set to full width
                 }} // Smaller font size
               >
                 FashionForward is a leading fashion rental service that provides
@@ -258,7 +416,7 @@ const Home = () => {
                 you covered.
               </Typography>
             </Grid>
-            <div style={{ width: '190px' }}></div>
+            <div style={{ width: '120px' }}></div>
             {/* Divider between About Us and Contact Us */}
             <Divider orientation="vertical" flexItem variant="middle" />
 
@@ -278,7 +436,8 @@ const Home = () => {
                 sx={{
                   fontFamily: "'Open Sans', sans-serif",
                   fontWeight: 400,
-                  fontSize: 14
+                  fontSize: 14,
+                  // width: '100%', // Set to full width
                 }} // Smaller font size
               >
                 For any inquiries, please reach out to us at{' '}

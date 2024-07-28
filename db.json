@@ -25,25 +25,39 @@
       "id": 1
     },
     {
-      "name": "Maxx_wills",
-      "email": "727722eucs108@skcet.ac.in",
-      "password": "jojo123",
+      "name": "Mothi S",
+      "email": "mothimtb24@gmail.com",
+      "password": "dsdf",
       "age": "20",
       "id": 2
     },
     {
-      "name": "fcc",
+      "name": "Mothi",
       "email": "727722eucs128@skcet.ac.in",
       "password": "dsdf",
       "age": "20",
       "id": 3
     },
     {
-      "name": "Maxx_wills",
+      "name": "Mothi ",
       "email": "mothimtb24@gmail.com",
-      "password": "jojo123",
-      "age": "20",
+      "password": "hello123",
+      "age": "22",
       "id": 4
+    },
+    {
+      "name": "Test User",
+      "email": "test@test.co",
+      "password": "test123",
+      "age": "25",
+      "id": 5
+    },
+    {
+      "name": "Test 2",
+      "email": "test2@test.co",
+      "password": "test123",
+      "age": "30",
+      "id": 6
     }
   ]
 }
