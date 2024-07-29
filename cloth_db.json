@@ -1,0 +1,262 @@
+{
+  "SwapItems": {
+    "ShirtList": [
+      {
+        "id": 1,
+        "name": "Formal Shirt",
+        "description": "A classic formal shirt made from premium cotton.",
+        "price": "$29.99",
+        "imageUrl": "https://example.com/images/formal-shirt.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Casual Shirt",
+        "description": "A comfortable casual shirt for everyday wear.",
+        "price": "$19.99",
+        "imageUrl": "https://example.com/images/casual-shirt.jpg"
+      }
+    ],
+    "PantList": [
+      {
+        "id": 1,
+        "name": "Jeans",
+        "description": "Classic denim jeans with a modern fit.",
+        "price": "$39.99",
+        "imageUrl": "https://example.com/images/jeans.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Chinos",
+        "description": "Stylish chinos made from soft cotton fabric.",
+        "price": "$34.99",
+        "imageUrl": "https://example.com/images/chinos.jpg"
+      }
+    ],
+    "TshirtList": [
+      {
+        "id": 1,
+        "name": "Graphic T-Shirt",
+        "description": "A trendy t-shirt with a unique graphic design.",
+        "price": "$14.99",
+        "imageUrl": "https://example.com/images/graphic-tshirt.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Plain T-Shirt",
+        "description": "A versatile plain t-shirt for any occasion.",
+        "price": "$9.99",
+        "imageUrl": "https://example.com/images/plain-tshirt.jpg"
+      }
+    ],
+    "TrousersList": [
+      {
+        "id": 1,
+        "name": "Formal Trousers",
+        "description": "Elegant formal trousers for office wear.",
+        "price": "$49.99",
+        "imageUrl": "https://example.com/images/formal-trousers.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Cargo Trousers",
+        "description": "Rugged cargo trousers with plenty of pockets.",
+        "price": "$44.99",
+        "imageUrl": "https://example.com/images/cargo-trousers.jpg"
+      }
+    ],
+    "SuitList": [
+      {
+        "id": 1,
+        "name": "Business Suit",
+        "description": "A professional business suit for formal occasions.",
+        "price": "$199.99",
+        "imageUrl": "https://example.com/images/business-suit.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Casual Suit",
+        "description": "A relaxed suit for semi-formal events.",
+        "price": "$179.99",
+        "imageUrl": "https://example.com/images/casual-suit.jpg"
+      }
+    ]
+  },
+  "RentItems": {
+    "ShirtList": [
+      {
+        "id": 1,
+        "name": "Formal Shirt",
+        "description": "A classic formal shirt made from premium cotton.",
+        "price": "$29.99",
+        "imageUrl": "https://example.com/images/formal-shirt.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Casual Shirt",
+        "description": "A comfortable casual shirt for everyday wear.",
+        "price": "$19.99",
+        "imageUrl": "https://example.com/images/casual-shirt.jpg"
+      }
+    ],
+    "PantList": [
+      {
+        "id": 1,
+        "name": "Jeans",
+        "description": "Classic denim jeans with a modern fit.",
+        "price": "$39.99",
+        "imageUrl": "https://example.com/images/jeans.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Chinos",
+        "description": "Stylish chinos made from soft cotton fabric.",
+        "price": "$34.99",
+        "imageUrl": "https://example.com/images/chinos.jpg"
+      }
+    ],
+    "TshirtList": [
+      {
+        "id": 1,
+        "name": "Graphic T-Shirt",
+        "description": "A trendy t-shirt with a unique graphic design.",
+        "price": "$14.99",
+        "imageUrl": "https://example.com/images/graphic-tshirt.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Plain T-Shirt",
+        "description": "A versatile plain t-shirt for any occasion.",
+        "price": "$9.99",
+        "imageUrl": "https://example.com/images/plain-tshirt.jpg"
+      }
+    ],
+    "TrousersList": [
+      {
+        "id": 1,
+        "name": "Formal Trousers",
+        "description": "Elegant formal trousers for office wear.",
+        "price": "$49.99",
+        "imageUrl": "https://example.com/images/formal-trousers.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Cargo Trousers",
+        "description": "Rugged cargo trousers with plenty of pockets.",
+        "price": "$44.99",
+        "imageUrl": "https://example.com/images/cargo-trousers.jpg"
+      }
+    ],
+    "SuitList": [
+      {
+        "id": 1,
+        "name": "Business Suit",
+        "description": "A professional business suit for formal occasions.",
+        "price": "$199.99",
+        "imageUrl": "https://example.com/images/business-suit.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Casual Suit",
+        "description": "A relaxed suit for semi-formal events.",
+        "price": "$179.99",
+        "imageUrl": "https://example.com/images/casual-suit.jpg"
+      }
+    ]
+  },
+  "BuyItems": {
+    "ShirtList": [
+      {
+        "id": 1,
+        "name": "Formal Shirt",
+        "description": "A classic formal shirt made from premium cotton.",
+        "price": "$29.99",
+        "imageUrl": "https://example.com/images/formal-shirt.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Formal Shirt",
+        "description": "A classic formal shirt made from premium cotton.",
+        "price": "$29.99",
+        "imageUrl": "https://example.com/images/formal-shirt.jpg"
+      },
+      {
+        "id": 1,
+        "name": "Formal Shirt",
+        "description": "A classic formal shirt made from premium cotton.",
+        "price": "$29.99",
+        "imageUrl": "https://example.com/images/formal-shirt.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Casual Shirt",
+        "description": "A comfortable casual shirt for everyday wear.",
+        "price": "$19.99",
+        "imageUrl": "https://example.com/images/casual-shirt.jpg"
+      }
+    ],
+    "PantList": [
+      {
+        "id": 1,
+        "name": "Jeans",
+        "description": "Classic denim jeans with a modern fit.",
+        "price": "$39.99",
+        "imageUrl": "https://example.com/images/jeans.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Chinos",
+        "description": "Stylish chinos made from soft cotton fabric.",
+        "price": "$34.99",
+        "imageUrl": "https://example.com/images/chinos.jpg"
+      }
+    ],
+    "TshirtList": [
+      {
+        "id": 1,
+        "name": "Graphic T-Shirt",
+        "description": "A trendy t-shirt with a unique graphic design.",
+        "price": "$14.99",
+        "imageUrl": "https://example.com/images/graphic-tshirt.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Plain T-Shirt",
+        "description": "A versatile plain t-shirt for any occasion.",
+        "price": "$9.99",
+        "imageUrl": "https://example.com/images/plain-tshirt.jpg"
+      }
+    ],
+    "TrousersList": [
+      {
+        "id": 1,
+        "name": "Formal Trousers",
+        "description": "Elegant formal trousers for office wear.",
+        "price": "$49.99",
+        "imageUrl": "https://example.com/images/formal-trousers.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Cargo Trousers",
+        "description": "Rugged cargo trousers with plenty of pockets.",
+        "price": "$44.99",
+        "imageUrl": "https://example.com/images/cargo-trousers.jpg"
+      }
+    ],
+    "SuitList": [
+      {
+        "id": 1,
+        "name": "Business Suit",
+        "description": "A professional business suit for formal occasions.",
+        "price": "$199.99",
+        "imageUrl": "https://example.com/images/business-suit.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Casual Suit",
+        "description": "A relaxed suit for semi-formal events.",
+        "price": "$179.99",
+        "imageUrl": "https://example.com/images/casual-suit.jpg"
+      }
+    ]
+  }
+}
