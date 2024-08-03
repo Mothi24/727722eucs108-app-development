@@ -58,6 +58,13 @@
       "password": "test123",
       "age": "30",
       "id": 6
+    },
+    {
+      "name": "Test User",
+      "email": "test1234@test.co",
+      "password": "jojo123",
+      "age": "25",
+      "id": 7
     }
   ]
 }

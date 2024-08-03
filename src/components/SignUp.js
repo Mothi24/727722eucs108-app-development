@@ -35,6 +35,7 @@ function SignUp() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [password, setPassword] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const { userData, setUserData } = useContext(UserContext)
 
@@ -42,12 +43,19 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('http://localhost:8080/users', { name, email, password, age })
-      setUserData({ ...userData, name: name, email: email, age: age })
-      toast.success('Registered Successfully')
-      navigate('/home')
+      const response = await axios.post("http://localhost:8080/userauth/register",
+        { name: name, emailId: email, password: password, age: age })
+      if (response != null) {
+        setUserData({ ...userData, name: name, email: email, age: age })
+        toast.success('Registered Successfully')
+        navigate('/home')
+      }
+      else {
+        toast.error('User already exist');
+      }
     }
     catch (e) {
+      console.log(e)
       toast.error('An Error Occoured')
     }
   }
@@ -119,8 +127,8 @@ function SignUp() {
 
         <div className="flex-row">
           <div>
-            <input type="checkbox" id="rememberMe" />
-            <label htmlFor="rememberMe">Remember me</label>
+            <input type="checkbox" id="rememberMe" onClick={() => { setIsAdmin(!isAdmin) }} />
+            <label htmlFor="rememberMe">Register  as Admin</label>
           </div>
           <span className="span">Forgot password?</span>
         </div>
