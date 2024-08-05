@@ -10,7 +10,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import '../styles/SignUp.css'
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import { UserContext } from '../App';
-
+import '@fontsource/open-sans'
 
 const CustomTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
@@ -43,16 +43,31 @@ function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/userauth/register",
-        { name: name, emailId: email, password: password, age: age })
-      if (response != null) {
-        setUserData({ ...userData, name: name, email: email, age: age })
-        toast.success('Registered Successfully')
-        navigate('/home')
+      if (isAdmin) {
+        const response = await axios.post("http://localhost:8080/userauth/register",
+          { name: name, emailId: email, password: password, age: age })
+        if (response != null) {
+          setUserData({ ...userData, name: name, email: email, age: age, isLoggedIn: true, isAdmin: false })
+          toast.success(' User Registered Successfully')
+          navigate('/')
+        }
+        else {
+          toast.error('User already exist');
+        }
       }
       else {
-        toast.error('User already exist');
+        const response = await axios.post("http://localhost:8080/adminauth/register",
+          { name: name, emailId: email, password: password, age: age })
+        if (response != null) {
+          setUserData({ ...userData, name: name, email: email, age: age, isLoggedIn: true, isAdmin: true })
+          toast.success('Registered Successfully')
+          navigate('/')
+        }
+        else {
+          toast.error('User already exist');
+        }
       }
+
     }
     catch (e) {
       console.log(e)
@@ -64,10 +79,12 @@ function SignUp() {
   return (
     <>
       <form className="form" onSubmit={handleSubmit}>
+
         <CustomTextField
           onChange={(event) => { setName(event.target.value) }}
           variant="outlined"
           fullWidth
+          required
           placeholder="Enter your Name"
           InputProps={{
             startAdornment: (
@@ -83,6 +100,7 @@ function SignUp() {
           onChange={(event) => { setAge(event.target.value) }}
           variant="outlined"
           fullWidth
+          required
           placeholder="Enter your Age"
           InputProps={{
             startAdornment: (
@@ -98,6 +116,7 @@ function SignUp() {
           onChange={(event) => { setEmail(event.target.value) }}
           variant="outlined"
           fullWidth
+          required
           placeholder="Enter your Email"
           InputProps={{
             startAdornment: (
@@ -114,6 +133,7 @@ function SignUp() {
           variant="outlined"
           type="password"
           fullWidth
+          required
           placeholder="Enter your Password"
           InputProps={{
             startAdornment: (
@@ -127,7 +147,7 @@ function SignUp() {
 
         <div className="flex-row">
           <div>
-            <input type="checkbox" id="rememberMe" onClick={() => { setIsAdmin(!isAdmin) }} />
+            <input type="checkbox" id="rememberMe" onSelect={() => { setIsAdmin(true) }} />
             <label htmlFor="rememberMe">Register  as Admin</label>
           </div>
           <span className="span">Forgot password?</span>

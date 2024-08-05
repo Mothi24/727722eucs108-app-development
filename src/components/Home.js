@@ -165,7 +165,7 @@ const Home = () => {
       email: '',
       age: ''
     })
-    navigate('/')
+    navigate('/login')
   }
 
   return (
@@ -242,13 +242,13 @@ const Home = () => {
           {/* Buy, Rent, Swap options */}
           <OptionsContainer>
             <List>
-              <ListItem button>
+              <ListItem button onClick={() => { (userData.isLoggedIn) ? navigate('/buy') : navigate('/login') }}>
                 <ListItemText primary="Buy" />
               </ListItem>
-              <ListItem button>
+              <ListItem button onClick={() => { (userData.isLoggedIn) ? navigate('/rent') : navigate('/login') }}>
                 <ListItemText primary="Rent" />
               </ListItem>
-              <ListItem button>
+              <ListItem button onClick={() => { (userData.isLoggedIn) ? navigate('/swap') : navigate('/login') }}>
                 <ListItemText primary="Swap" />
               </ListItem>
             </List>

@@ -30,7 +30,7 @@ function App() {
 
   const [userData, setUserData] = useState({
     isLoggedIn: false,
-    isAdmin: true,
+    isAdmin: false,
     name: '',
     email: '',
     age: ''
@@ -45,9 +45,9 @@ function App() {
           <CartProvider>
             <Router>
               <Routes>
-                <Route path='/' element={<Login />} />
+                <Route path='/login' element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path='/buy' element={<Buy />} />
                 <Route path='/rent' element={<Rent />} />
                 <Route path='/swap' element={<Swap />} />
