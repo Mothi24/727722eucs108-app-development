@@ -10,7 +10,7 @@ function ShopItemCard({ items }) {
             <CardMedia
               component="img"
               height="200"
-              image={require(`../../assets/cart_assets/${item.imageUrl}`)}
+              image={item.imageUrl}
               alt={item.name}
             />
             <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -22,7 +22,7 @@ function ShopItemCard({ items }) {
                   {item.description}
                 </Typography>
                 <Typography variant="body2" color="text.primary">
-                  {item.price}
+                  ${item.price}
                 </Typography>
               </div>
 

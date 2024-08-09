@@ -35,7 +35,7 @@ function SignUp() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [password, setPassword] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
 
   const { userData, setUserData } = useContext(UserContext)
 
@@ -147,7 +147,7 @@ function SignUp() {
 
         <div className="flex-row">
           <div>
-            <input type="checkbox" id="rememberMe" onSelect={() => { setIsAdmin(true) }} />
+            <input type="checkbox" id="rememberMe" onClick={() => { setIsAdmin(!isAdmin); console.log(isAdmin) }} />
             <label htmlFor="rememberMe">Register  as Admin</label>
           </div>
           <span className="span">Forgot password?</span>

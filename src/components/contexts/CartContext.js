@@ -9,11 +9,7 @@ export const CartSwapContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartData, setCartData] = useState({
     buyCart: {
-      ShirtList: [
-        {id: 1, imageUrl: 'img1.jpg', name: 'Classic White Shirt', description: 'A timeless white shirt perfect for any occasion.', price: '$29.99', quantity: 1 },
-        {id: 2, imageUrl: 'img2.jpg', name: 'Blue Denim Shirt', description: 'Casual denim shirt for a laid-back look.', price: '$39.99', quantity: 1 },
-        {id: 3, imageUrl: 'img3.jpg', name: 'Striped Casual Shirt', description: 'Comfortable striped shirt for everyday wear.', price: '$24.99', quantity: 1 },
-      ],
+      ShirtList: [],
       PantList: [],
       TshirtList: [],
       TrousersList: [],
@@ -21,9 +17,9 @@ export const CartProvider = ({ children }) => {
     },
     rentCart: {
       ShirtList: [
-        {id: 1, imageUrl: 'img1.jpg', name: 'Classic White Shirt', description: 'A timeless white shirt perfect for any occasion.', price: '$29.99', quantity: 1 },
-        {id: 2, imageUrl: 'img2.jpg', name: 'Blue Denim Shirt', description: 'Casual denim shirt for a laid-back look.', price: '$39.99', quantity: 1 },
-        {id: 3, imageUrl: 'img3.jpg', name: 'Striped Casual Shirt', description: 'Comfortable striped shirt for everyday wear.', price: '$24.99', quantity: 1 },
+        {id: 1, imageUrl: 'img1.jpg', name: 'Classic White Shirt', description: 'A timeless white shirt perfect for any occasion.', price: '29.99', quantity: 1 },
+        {id: 2, imageUrl: 'img2.jpg', name: 'Blue Denim Shirt', description: 'Casual denim shirt for a laid-back look.', price: '39.99', quantity: 1 },
+        {id: 3, imageUrl: 'img3.jpg', name: 'Striped Casual Shirt', description: 'Comfortable striped shirt for everyday wear.', price: '24.99', quantity: 1 },
       ],
       PantList: [],
       TshirtList: [],

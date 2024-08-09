@@ -12,6 +12,7 @@ import Swap from "./components/user_utils/pages/Swap";
 import { CartProvider } from "./components/contexts/CartContext";
 import Cart from "./components/cart_utils/Cart";
 import { initializeApp } from "firebase/app";
+import ClothAdder from "./components/admin_utils/ClothAdder";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDoV-Jt1fUplGShfYdo6adc8fnlfyHlZk",
@@ -39,25 +40,24 @@ function App() {
 
 
   return (
-    <>
-      <UserContext.Provider value={{ userData, setUserData }}>
-        <ClothProvider>
-          <CartProvider>
-            <Router>
-              <Routes>
-                <Route path='/login' element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/" element={<Home />} />
-                <Route path='/buy' element={<Buy />} />
-                <Route path='/rent' element={<Rent />} />
-                <Route path='/swap' element={<Swap />} />
-                <Route path="/cart" element={<Cart />} />
-              </Routes>
-            </Router>
-          </CartProvider>
-        </ClothProvider>
-      </UserContext.Provider>
-    </>
+    <UserContext.Provider value={{ userData, setUserData }}>
+      <ClothProvider>
+        <CartProvider>
+          <Router>
+            <Routes>
+              <Route path='/login' element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/" element={<Home />} />
+              <Route path='/buy' element={<Buy />} />
+              <Route path='/rent' element={<Rent />} />
+              <Route path='/swap' element={<Swap />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/add" element={<ClothAdder />} />
+            </Routes>
+          </Router>
+        </CartProvider>
+      </ClothProvider>
+    </UserContext.Provider>
   );
 }
 

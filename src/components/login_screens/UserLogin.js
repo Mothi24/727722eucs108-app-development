@@ -38,7 +38,7 @@ const UserLogin = () => {
   const verifyAuth = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:8080/users?email=${email}&password=${password}`);
+      const response = await axios.get(`http://localhost:8080/userauth/signin?emailId=${email}&password=${password}`);
       const users = response.data;
 
       if (users.length > 0) {

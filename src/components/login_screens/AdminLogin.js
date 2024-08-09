@@ -40,7 +40,7 @@ const AdminLogin = () => {
 
     try {
       // Fetch admin data from the server using email and password
-      const response = await axios.get(`http://localhost:8080/users?email=${email}&password=${password}`);
+      const response = await axios.get(`http://localhost:8080/adminauth/signin?emailId=${email}&password=${password}`);
       const admins = response.data;
 
       if (admins.length > 0) {
